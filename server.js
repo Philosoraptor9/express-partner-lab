@@ -13,8 +13,14 @@ app.get('/', (req, res) => {
   });
 
 app.get('/components', (req, res) => {
-    const context = {components: Components}
+    const context = {components: Components};
     res.render('index.ejs', context)
+})
+
+app.delete('/components/:id', (req, res) => {
+console.log(req.params.id, 'id in delete route');
+Components.splice(req.params.id, 1);
+res.redirect('/components')
 })
 
 app.listen(3000, () => {

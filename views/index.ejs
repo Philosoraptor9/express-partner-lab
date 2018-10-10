@@ -8,9 +8,15 @@
 </head>
 <body>
     <h1>PARTS OF A COMPUTER</h1>
-    <% let display = JSON.stringify(components); %>
-    <p>
+    <ul>
+    <% for (let i = 0; i < components.length; i ++) { %>
+        <% let display = JSON.stringify(components[i]) %>
+        <li>
         <%= display %>
-    </p>
+        <form action="/components/<%=i%>?_method=DELETE" method="POST">
+            <input type="submit" value="delete">
+        </li>
+    <% } %>
+    </ul>
 </body>
 </html>
