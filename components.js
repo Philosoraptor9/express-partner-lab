@@ -14,3 +14,5 @@ const components = [
     {part: "Speakers", description: "Output device(s) for sounds."},
     {part: "Modem", description: "Device for connecting to the internet."}
 ]
+
+module.exports = components;
